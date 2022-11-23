@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 namespace Packt.Shared;
-public class Person
+public partial class Person
 {
  public string? Name;
  public DateTime DateOfBirth;
@@ -26,7 +26,31 @@ public (string ,int) GetFruit()
           return ("Apples", 5);
         }
 
+public string SayHello()
+{
+  return $"{Name} says 'Hello!'";
 }
+
+public string SayHelloTo(string name)
+{
+  return $"{Name} says 'Hello {name}!";
+}
+
+public string OptionalParametrs(
+  string command = "Run!",
+  double number = 0.0,
+  bool active = true)
+  {
+    return string.Format(
+      format: " command is {0}, number is {1}, active is {2}",
+      arg0: command,
+      arg1: number,
+      arg2: active);
+    
+  }
+}
+
+
 
 
 

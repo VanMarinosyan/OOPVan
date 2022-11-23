@@ -63,5 +63,26 @@ internal class Program
          (string, int) fruit = bob.GetFruit();
          WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
 
+         bob.SayHello();
+         bob.SayHelloTo("Mark");
+
+         WriteLine (bob.OptionalParametrs(number: 52.7, command: "Hide!"));
+
+         var sam = new Person    //proporty
+         {
+          Name = "Sam",
+          DateOfBirth = new DateTime(1972, 1, 27)
+         };
+         WriteLine(sam.Origin);
+         WriteLine(sam.Greeting);
+         WriteLine(sam.Age);
+
+         sam.FavoriteIceCream = "Chocolate Fudge";
+         WriteLine($"Sam`s favorite ice-cream is {sam.FavoriteIceCream}.");
+         sam.FavoritePrimaryColor = "Red";
+         WriteLine($"Sam`s favorite primary color is {sam.FavoritePrimaryColor}.");
+
+         
+
     }
 }
