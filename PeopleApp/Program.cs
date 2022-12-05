@@ -104,6 +104,51 @@ internal class Program
 
          WriteLine (john.ToString());
          WriteLine (bob.ToString());
+         Employee aliceInEmployee = new Employee
+         {
+          Name = "Alice",
+          EmployeeCode = "AA123"
+         };
+         Person aliceInPerson = aliceInEmployee;
+         aliceInEmployee.WriteToConsole();
+         aliceInPerson.WriteToConsole();
+         WriteLine(aliceInEmployee.ToString());
+         WriteLine(aliceInPerson.ToString());
+
+         //Employee explicitAlice = (Employee)aliceInPerson;
+
+         //if (aliceInPerson is Employee)
+         //{
+         // WriteLine($"{nameof(aliceInPerson)} IS an Employee");
+         // Employee explicitAlice = (Employee)aliceInPerson;
+          //// safely do something whith explicitAlice
+         //}
+         
+         Employee aliceAsEmployee = aliceInEmployee as Employee;
+         if (aliceAsEmployee != null)
+         {
+          WriteLine($"{nameof(aliceInPerson)} IS an Employee");
+          // do something with aliceAsEmployee
+         }
+
+         var harry = new Person { Name = "Harry" };
+         var mary = new Person { Name = "Mary"};
+         var jill = new Person { Name = "Jill"};
+         //call instance method
+         var baby1 = mary.ProcreateWith(harry);
+         //call static method
+         var baby2 = Person.Procreate(harry, jill);
+         WriteLine($"{harry.Name} has { harry.Children.Count} children");
+         WriteLine($"{mary.Name} has { mary.Children.Count} children");
+         WriteLine($"{jill.Name} has { jill.Children.Count} children");
+         WriteLine(
+          format: "{0}'s first child is named \"{1}\".",
+          arg0: harry.Name,
+          arg1: harry.Children[0].Name);
+         
+
+
+
 
 
          
